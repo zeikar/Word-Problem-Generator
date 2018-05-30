@@ -15,8 +15,8 @@ public class DivisionOperation implements Operation
 		if(n1 % n2 != 0)
 		{
 			// 실수 체크.
-			// 오차가 0.01 이하이면 정답.
-			return Math.abs((double) n1 / n2 - answer) <= 0.01;
+			// 오차가 0.1 이하이면 정답.
+			return Math.abs((double) n1 / n2 - answer) <= 0.1;
 		}
 		
 		return n1 / n2 == answer;

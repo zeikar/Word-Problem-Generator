@@ -150,9 +150,16 @@ public class CLIInputManager implements InputManager
 		{
 			String input = scanner.nextLine().trim();
 			
+			
 			// 빈 줄을 입력하면 종료
 			if (input.length() == 0)
 			{
+				// 리스트가 비어있으면 다시 입력.
+				if (inputStringList.size() == 0)
+				{
+					continue;
+				}
+				
 				break;
 			}
 			else

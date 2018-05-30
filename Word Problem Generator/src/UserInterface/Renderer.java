@@ -5,5 +5,5 @@ package UserInterface;
  */
 public interface Renderer
 {
-	void draw(String str);
+	void printString(String str);
 }

@@ -59,28 +59,35 @@ public class Worksheet
 	// 사용자가 문제 풀기.
 	public void solveProblems()
 	{
+		// 맞은 문제 수.
+		int correctProblems = 0;
+		
 		for (int i = 0; i < numberOfProblems; ++i)
 		{
 			Problem problem = problems.get(i);
 			
-			renderer.draw((i + 1) + "번 문제. ");
+			renderer.printString((i + 1) + "번 문제. ");
 			
 			problems.get(i).printProblem();
 			
-			renderer.draw("답을 입력하세요.");
+			renderer.printString("답을 입력하세요.");
 			
 			double answer = inputManager.getAnswerFromUser();
 			
 			// 정답과 비교
 			if(problem.isCorrect(answer))
 			{
-				renderer.draw("정답!");
+				renderer.printString("정답!");
+				correctProblems++;
 			}
 			else
 			{
-				renderer.draw("오답..");
+				renderer.printString("오답..");
 			}
 		}
+		
+		// 점수 출력.
+		renderer.printString("점수: " + correctProblems + "/" + problems.size());
 	}
 	
 	private ProblemType getRandomProblemType()

@@ -22,6 +22,7 @@ public class Problem
 	
 	// 템플릿과 연산.
 	private Template template;
+	
 	private Operation operation;
 	
 	public Problem(Renderer renderer, ProblemType problemType, Person person1, Person person2, Item item, int minRange, int maxRange)
@@ -45,7 +46,7 @@ public class Problem
 	{
 		String problemString = template.makeTemplate(person1.getName(), person2.getName(), item.getName(), amount1, amount2);
 		
-		renderer.draw(problemString);
+		renderer.printString(problemString);
 	}
 	
 	// 사용자가 입력한 답이 정답인지 확인.
@@ -61,7 +62,7 @@ public class Problem
 		
 		do
 		{
-			n = rand.nextInt(maxRange) + minRange;
+			n = rand.nextInt((maxRange - minRange) + 1) + minRange;
 		}
 		// 양수가 아닌 것은 다시 랜덤 생성
 		while (n <= 0);

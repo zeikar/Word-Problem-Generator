@@ -6,7 +6,7 @@ package UserInterface;
 public class CLIRenderer implements Renderer
 {
 	@Override
-	public void draw(String str)
+	public void printString(String str)
 	{
 		System.out.println(str);
 	}

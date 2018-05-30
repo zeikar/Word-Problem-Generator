@@ -8,8 +8,8 @@ import java.util.Random;
 public class DivisionTemplate implements Template
 {
 	private final String[] template = {
-			"#NAME1 has #NUM1 #NUM2. (He/she) wants to divide them evenly " +
-					"among #NUM2 friends. How many #NUM2 does each friend get?"
+			"#NAME1 has #NUM1 #ITEM. (He/she) wants to divide them evenly " +
+					"among #NUM2 friends. How many #ITEM does each friend get?"
 	};
 	
 	@Override
